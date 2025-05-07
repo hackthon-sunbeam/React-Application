@@ -34,3 +34,22 @@ export async function userSignUp(email, password, firstName, lastName, phoneno, 
 	const data = result.data;
 	return data;
 }
+
+
+export async function userUpdate(email, password, firstName, lastName, phoneno, address) {
+	const url = `${baseUrl}/users`;
+	const reqbody = {firstName, lastName, email, phoneno, address, password };
+	const resp = await axios.put(url, reqbody);
+	debugger
+	console.log(resp);
+	if (resp.status !== 200)
+		// check axios resp status (200 or else)
+		throw new Error("Axios API call Error");
+	// get axios resp data - result
+	const result = resp.data;
+	if (result.status !== "success")
+		// if api status is not success ("error"), then get the message
+		throw new Error(result.message);
+	const data = result.data;
+	return data;
+}

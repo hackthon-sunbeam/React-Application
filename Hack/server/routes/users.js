@@ -79,9 +79,17 @@ router.post("/signup/register", (req, resp) => {
     )
 })
 
-// PUT /users/:id
-router.put("/:id", (req, resp) => {
-    resp.send("Homework Implementation")
+//put/Edit profile
+router.put("/", (req, resp) => {
+    const {firstName,lastName,email,password,phoneno,address} = req.body
+    db.query("UPDATE user SET firstName=?, lastName=?, email=?, password=?, phoneno=?, address=? WHERE id=?",
+        [firstName,lastName,email,password,phoneno,address, req.params.id],
+        (err, result) => {
+            if(err)
+                return resp.send(apiError(err))
+            resp.send(apiSuccess({id: req.params.id, ...req.body}))
+        }
+    )
 })
 
 // DELETE /users/:id

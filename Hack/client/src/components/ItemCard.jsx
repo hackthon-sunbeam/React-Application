@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import {
-	removeItem,
+	removeItem
 } from "../redux/cartSlice";
 
 const ItemCard = ({ author, contents }) => {

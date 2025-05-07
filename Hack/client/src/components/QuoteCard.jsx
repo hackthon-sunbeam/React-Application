@@ -9,7 +9,7 @@ const QuoteCard = (props) => {
 		dispatch(addItemAction);
 	};
 	return (
-		<div className="card d-inline-block m-2 p-2" style={{ width: "220px" }}>
+		<div className="card row d-inline-block m-2 p-2" style={{ width: "220px" }}>
 			<h3 className="card-title">{author}</h3>
 			<p className="card-text">
 				A {contents}.

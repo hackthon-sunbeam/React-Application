@@ -3,6 +3,16 @@ import { Link, useNavigate } from "react-router";
 
 function Navbar() {
 	const navigate = useNavigate();
+	// const { user } = useContext(AuthContext);
+
+	// const handleMyQuotesClick = (e) => {
+	// 	const userId = user.id;
+	// 	navigate("/user", {
+	// 		state: {
+	// 			id: userId,
+	// 		}
+	// 	})
+	// }
 
 	const onLogout = (e) => {
 		console.log("Logout clicked!");
@@ -29,13 +39,18 @@ function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link fw-bold" to="/user/profile">
+							<Link className="nav-link fw-bold" to="/user/update">
 								Profile
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link className="nav-link fw-bold" to="/user/favourites">
 								Favourites
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link fw-bold" to="/user/addquotes">
+								Add Quotes
 							</Link>
 						</li>
 						<li className="nav-item">

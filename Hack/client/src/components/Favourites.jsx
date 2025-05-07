@@ -13,8 +13,8 @@ const Favourites = () => {
 			{cartItems.map((item) => (
 				<ItemCard
 					key={item.itemid}
-					itemid={item.itemid}
-					quantity={item.quantity}
+					itemid={item.author}
+					quantity={item.content}
 				/>
 			))}
 			<br />

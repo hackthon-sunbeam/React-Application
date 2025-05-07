@@ -9,6 +9,8 @@ import RegistrationForm from "./components/RegistrationForm";
 import UserLayout from "./components/UserLayout";
 import UserDashboard from "./components/UserDashboard";
 import Favourites from "./components/Favourites";
+import UpdateForm from "./components/ProfileUpdate";
+import QuoteForm from './components/QuoteForm';
 
 
 export const AuthContext = createContext();
@@ -36,7 +38,8 @@ function App() {
 					<Route path="/user" element={<UserLayout />}>
 						<Route index="true" element={<UserDashboard />} />
             <Route path="favourites" element={<Favourites />} />
-
+            <Route path="update" element={<UpdateForm />} />
+            <Route path="addquotes" element={<QuoteForm />} />
           </Route>
         </Routes>
       </AuthContext.Provider>
