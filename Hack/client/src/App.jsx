@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
 import UserLayout from "./components/UserLayout";
 import UserDashboard from "./components/UserDashboard";
+import Favourites from "./components/Favourites";
 
 
 export const AuthContext = createContext();
@@ -34,6 +35,7 @@ function App() {
           {/* /user/url */}
 					<Route path="/user" element={<UserLayout />}>
 						<Route index="true" element={<UserDashboard />} />
+            <Route path="favourites" element={<Favourites />} />
 
           </Route>
         </Routes>

@@ -8,7 +8,7 @@ const UserLayout = () => {
 	return (
 		<div>
 			<Navbar />
-			<p className="bg-warning p-2">Hello, {user?.name}!</p>
+			<p className="bg-warning p-2 fw-bold">Hello, {user?.name}!</p>
 			<Outlet />
 		</div>
 	);
